@@ -1,9 +1,7 @@
 import sys
 from PyQt6.QtGui import QGuiApplication
 from PyQt6.QtQml import QQmlApplicationEngine
-
-
-
+from pyqt_backend.slots import AppWindow
 
 def start_app():
     # create an Application object with the args passed on the cmdline
@@ -12,6 +10,12 @@ def start_app():
     qml_engine = QQmlApplicationEngine()
     # connect the QML app engine quit to the Qt app engine quit
     qml_engine.quit.connect(app.quit)
+
+    # connect a slot to the qml-frontend
+    app_window = AppWindow.AppWindowHandler()
+    app_window.set_qml_app_engine(qml_engine)
+
+
     # load the entry point to the qml frontend app
     qml_engine.load('./qml-frontend/appEntry.qml')
     # start the app and connect it to the system exit call so we know what the exit code was
