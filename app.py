@@ -11,9 +11,9 @@ def start_app():
     # connect the QML app engine quit to the Qt app engine quit
     qml_engine.quit.connect(app.quit)
 
-    # connect a slot to the qml-frontend
-    app_window = AppWindow.AppWindowHandler()
-    app_window.set_qml_app_engine(qml_engine)
+    # create a slot/signal handler for the application window and connect it to the qml engine
+    app_window_handler = AppWindow.AppWindowHandler()
+    app_window_handler.set_qml_app_engine(qml_engine)
 
 
     # load the entry point to the qml frontend app

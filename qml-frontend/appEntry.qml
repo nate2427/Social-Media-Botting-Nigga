@@ -23,9 +23,6 @@ ApplicationWindow {
         }
     }
 
-
-
-
     Connections{
         target: backend
 
