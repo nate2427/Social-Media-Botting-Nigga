@@ -1,2 +1,7 @@
 .DS_store
-env
+.vscode
+.qmake.stash
+app.o
+Makefile
+social-media-botting-nigga.pro
+social-media-botting-nigga.app
