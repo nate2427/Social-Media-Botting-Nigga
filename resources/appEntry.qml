@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 ApplicationWindow {
+
     visible: true
     width: 600
     height: 500
@@ -11,10 +12,10 @@ ApplicationWindow {
         id: textId
         anchors.centerIn: parent
         text: "What up doe, my nigga!"
-        font.pixelSize: 24     
+        font.pixelSize: 24
     }
 
-    Button{
+    Button {
         text: "Change the message above"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: textId.bottom
@@ -23,7 +24,7 @@ ApplicationWindow {
         }
     }
 
-    Connections{
+    Connections {
         target: backend
 
         function onSetQMLAppEngineTextSignal(new_value) {
@@ -31,3 +32,10 @@ ApplicationWindow {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}D{i:1}
+}
+##^##*/
+
